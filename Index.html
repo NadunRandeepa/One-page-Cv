@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>One‑Page CV — Your Name</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#0b74de;--muted:#6b7280;--bg:#ffffff;--paper:#fbfdff}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#111}
+    body{background:linear-gradient(180deg,#f6f9ff 0%, #ffffff 100%);padding:24px;display:flex;align-items:center;justify-content:center}
+
+    /* Card / paper */
+    .cv{width:880px;max-width:96vw;background:var(--paper);border-radius:12px;box-shadow:0 10px 30px rgba(16,24,40,0.08);overflow:hidden;display:grid;grid-template-columns:1fr 320px}
+
+    /* Left column */
+    .main{padding:36px}
+    header{display:flex;align-items:center;gap:18px}
+    .avatar{width:84px;height:84px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#6c5ce7);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:32px}
+    h1{margin:0;font-size:24px}
+    .title{color:var(--muted);font-weight:600;font-size:14px}
+    .contact{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+    .section{margin-top:22px}
+    .section h2{font-size:13px;margin:0 0 10px 0;color:var(--accent)}
+    p.lead{margin:0;color:#111;line-height:1.45}
+
+    /* Experience list */
+    .job{margin-bottom:14px}
+    .job .meta{display:flex;justify-content:space-between;gap:12px}
+    .job .meta .company{font-weight:600}
+    .job .meta .period{color:var(--muted);font-size:13px}
+    ul.resp{margin:8px 0 0 18px;padding:0}
+
+    /* Right column */
+    .side{background:linear-gradient(180deg,#ffffff, #fbfdff);padding:28px;border-left:1px solid #eef2ff}
+    .skill-list{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:#f3f6ff;padding:8px 10px;border-radius:8px;font-size:13px;color:#0b3f6a}
+    .progress{height:8px;background:#eef2ff;border-radius:999px;overflow:hidden}
+    .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#6c5ce7)}
+
+    /* Footer */
+    footer{padding:18px 36px;background:#ffffff;border-top:1px dashed #eef2ff;text-align:center;font-size:13px;color:var(--muted)}
+
+    /* Print styles - try to fit one A4 page */
+    @media print{
+      body{padding:0;background:white}
+      .cv{box-shadow:none;border-radius:0;width:210mm;max-width:100%;grid-template-columns:1fr 290px}
+      .side{border-left:1px solid #ddd}
+      footer{display:none}
+      a::after{content:""}
+    }
+
+    /* Responsive */
+    @media (max-width:880px){
+      .cv{grid-template-columns:1fr;}
+      .side{border-left:none;border-top:1px solid #eef2ff}
+    }
+  </style>
+</head>
+<body>
+  <article class="cv" role="article">
+    <section class="main">
+      <header>
+        <div class="avatar">YR</div>
+        <div>
+          <h1>Your Name</h1>
+          <div class="title">Frontend Developer — React • HTML • CSS</div>
+          <div class="contact">
+            <div>📍 Kottawa, Sri Lanka</div>
+            <div>✉️ you@example.com</div>
+            <div>🔗 github.com/yourname</div>
+            <div>🔗 linkedin.com/in/yourname</div>
+          </div>
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>Profile</h2>
+        <p class="lead">Short 2–3 line summary about who you are, what you build, and the impact you create. Focus on role, years of experience, and a few strengths.</p>
+      </section>
+
+      <section class="section">
+        <h2>Experience</h2>
+
+        <div class="job">
+          <div class="meta"><div class="company">Frontend Developer — Acme Co.</div><div class="period">Jan 2024 – Present</div></div>
+          <div class="role">Working on product pages, performance optimizations, and component libraries.</div>
+          <ul class="resp">
+            <li>Built a reusable component system used across 10+ pages, reducing dev time by 30%.</li>
+            <li>Improved Lighthouse performance score from 55 → 88 on key landing pages.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="meta"><div class="company">Junior Developer — Beta Labs</div><div class="period">Aug 2022 – Dec 2023</div></div>
+          <ul class="resp">
+            <li>Implemented responsive UI for the dashboard using vanilla JS and CSS Grid.</li>
+            <li>Collaborated with designers to ship 5 features and reduce bugs by 20%.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Education</h2>
+        <div style="font-weight:600">BSc in Computer Science — University Name</div>
+        <div style="color:var(--muted);font-size:13px">2019 — 2023</div>
+      </section>
+
+      <section class="section">
+        <h2>Projects</h2>
+        <div style="margin-bottom:8px"><strong>Portfolio Website</strong> — Personal site showcasing projects & blog. <a href="#">(link)</a></div>
+        <div><strong>WhatsApp Clone</strong> — Realtime chat app using Firebase. <a href="#">(link)</a></div>
+      </section>
+    </section>
+
+    <aside class="side">
+      <section>
+        <h2>Skills</h2>
+        <div class="skill-list">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">React</span>
+          <span class="skill">Git</span>
+          <span class="skill">Figma</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Proficiency</h2>
+        <div style="margin-bottom:10px">React <div class="progress" aria-hidden="true" style="margin-top:6px"><i style="width:84%"></i></div></div>
+        <div style="margin-bottom:10px">JavaScript <div class="progress" aria-hidden="true" style="margin-top:6px"><i style="width:80%"></i></div></div>
+        <div style="margin-bottom:10px">CSS <div class="progress" aria-hidden="true" style="margin-top:6px"><i style="width:88%"></i></div></div>
+      </section>
+
+      <section class="section">
+        <h2>Languages</h2>
+        <div style="font-weight:600">English — Professional</div>
+        <div style="font-weight:600">Sinhala — Native</div>
+      </section>
+
+      <section class="section">
+        <h2>Certificates</h2>
+        <div style="font-size:14px">Google UX Design • FreeCodeCamp Responsive Web</div>
+      </section>
+
+    </aside>
+  </article>
+
+  <footer>Tip: Press <strong>Ctrl/Cmd + P</strong> → "Save as PDF" to export a printable one‑page CV.</footer>
+</body>
+</html>
